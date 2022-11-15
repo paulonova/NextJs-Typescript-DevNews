@@ -1,4 +1,5 @@
 import styles from './header.module.scss'
+import ActiveLink from '../ActiveLink'
 
 const Header = () => {
   return (
@@ -6,8 +7,16 @@ const Header = () => {
       <div className={styles.content}>
         <img src="/logo.svg" alt="Dev News" />
         <nav>
-          <a href="#">Home</a>
-          <a href="#">Posts</a>
+          <ActiveLink
+            activeClassName={styles.active}
+            href={'/'}
+            pageName={'Home'}
+          />
+          <ActiveLink
+            activeClassName={styles.active}
+            href={'/posts'}
+            pageName={'Posts'}
+          />
         </nav>
       </div>
     </header>

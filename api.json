@@ -15,15 +15,29 @@
       "id": 4,
       "title": "Post 04 - Javascript e ReactJs",
       "author": "Paulonova"
+    },
+    {
+      "id": 5,
+      "title": "Post 05 - Gatsby & GraphQl",
+      "author": "Paulonova"
+    },
+    {
+      "id": 6,
+      "title": "Post 06 - MongoDB & NodeExpress",
+      "author": "Paulonova"
     }
   ],
   "comments": [
     { "id": 1, "body": "Comentario 1 sobre o post 1", "postId": 1 },
     { "id": 2, "body": "Comentario 1 sobre o post 2", "postId": 2 },
     { "id": 3, "body": "Comentario 1 sobre o post 3", "postId": 3 },
+    { "id": 3, "body": "Comentario 2 sobre o post 3", "postId": 3 },
     { "id": 4, "body": "Comentario 2 sobre o post 1", "postId": 1 },
     { "id": 5, "body": "Comentario 2 sobre o post 2", "postId": 2 },
-    { "id": 6, "body": "Comentario 1 sobre o post 4", "postId": 4 }
+    { "id": 6, "body": "Comentario 1 sobre o post 4", "postId": 4 },
+    { "id": 7, "body": "Comentario 1 sobre o post 5", "postId": 5 },
+    { "id": 7, "body": "Comentario 2 sobre o post 5", "postId": 5 },
+    { "id": 8, "body": "Comentario 1 sobre o post 6", "postId": 6 }
   ],
   "profile": { "name": "Paulonova" }
 }

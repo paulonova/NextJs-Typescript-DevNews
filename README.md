@@ -43,3 +43,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 -d 2000 = delay
 
 will install 'json-server@0.17.1'
+
+## Static Side Render
+
+> run: npm run build to generate the statics page
+
+> run: npm run start to run the project from build ..
+
+## getStaticPaths()
+
+PS: It´s not possible to generate Statics page from a dynamic page, ex: [id].tsx, where the id is dynamic.
+In this case I will need to use a getStaticPaths() function, that will generate in the BUILD all pages från the project.
+\*\* The PROBLEM is when you have a lot of pages and generate the build with all these pages. That will be too much!!

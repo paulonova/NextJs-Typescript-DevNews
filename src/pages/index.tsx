@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 import { useEffect, useState } from 'react'
 
 interface Post {
@@ -51,20 +51,3 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 }
 
 export default Home
-
-/**
- * axios
-      .get('http://localhost:3000/posts')
-      .then((response) => {
-        console.log('Response: ', response)
-      })
-      .catch((error) => {
-        console.log('Error: ', error)
-      })
-
-       fetch('http://localhost:3000/posts').then((response) => {
-      response.json().then((data) => {
-        console.log('Data: ', response)
-      })
-    })
- */

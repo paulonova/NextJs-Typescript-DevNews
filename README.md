@@ -38,9 +38,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 => npx json-server api.json -p 3333 -w -d 2000
 \*\* Must be diferent port from the project!
 
--p = Port
--w = watch
--d 2000 = delay
+- p = Port
+
+- w = watch
+
+- d 2000 = delay
 
 will install 'json-server@0.17.1'
 

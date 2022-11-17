@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { GetStaticProps } from 'next'
+import SEO from '../../components/SEO'
 
 interface Post {
   //map(arg0: (post: any) => JSX.Element): import('react').ReactNode
@@ -12,6 +13,7 @@ interface PostsProps {
 const Posts = ({ posts }: PostsProps) => {
   return (
     <div>
+      <SEO title={'Posts'} />
       <h1>Post List</h1>
       <ul>
         {posts?.map((post) => (

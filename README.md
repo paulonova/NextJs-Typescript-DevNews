@@ -61,3 +61,11 @@ In this case I will need to use a getStaticPaths() function, that will generate 
 ## API ROUTES
 
 https://nextjs.org/docs/api-routes/introduction
+
+## Dynamic Import
+
+PS: Any libraries upload only when the application needs, doesn´t load in the start of project!
+
+https://nextjs.org/docs/advanced-features/dynamic-import
+
+using: calculo.tsx and Modal.tsx

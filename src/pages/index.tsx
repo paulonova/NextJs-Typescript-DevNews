@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { GetServerSideProps, GetStaticProps } from 'next'
 import { useEffect, useState } from 'react'
+import SEO from '../components/SEO'
 
 interface Post {
-  map(arg0: (post: any) => JSX.Element): import('react').ReactNode
   id: string
   title: string
 }
@@ -13,22 +13,9 @@ interface HomeProps {
 }
 
 const Home = ({ posts }: HomeProps) => {
-  // const [posts, setPosts] = useState<Post[]>([])
-
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:3333/posts')
-  //     .then((response) => {
-  //       console.log('Response: ', response.data)
-  //       setPosts(response.data)
-  //     })
-  //     .catch((error) => {
-  //       console.log('Error: ', error)
-  //     })
-  // }, [])
-
   return (
     <div>
+      <SEO title={'Home'} />
       <h1>Posts</h1>
       <ul>
         {posts?.map((post) => (
@@ -51,3 +38,15 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 }
 
 export default Home
+
+// useEffect(() => {
+//   axios
+//     .get('http://localhost:3333/posts')
+//     .then((response) => {
+//       console.log('Response: ', response.data)
+//       setPosts(response.data)
+//     })
+//     .catch((error) => {
+//       console.log('Error: ', error)
+//     })
+// }, [])

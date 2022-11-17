@@ -57,3 +57,7 @@ will install 'json-server@0.17.1'
 PS: It´s not possible to generate Statics page from a dynamic page, ex: [id].tsx, where the id is dynamic.
 In this case I will need to use a getStaticPaths() function, that will generate in the BUILD all pages från the project.
 \*\* The PROBLEM is when you have a lot of pages and generate the build with all these pages. That will be too much!!
+
+## API ROUTES
+
+https://nextjs.org/docs/api-routes/introduction

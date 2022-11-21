@@ -1,9 +1,10 @@
-import axios from 'axios'
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
 import SEO from '../../components/SEO'
+import { getPrismicClient } from '../../services/prismicio'
+import styles from './posts.module.scss'
 
 interface Post {
-  //map(arg0: (post: any) => JSX.Element): import('react').ReactNode
   id: string
   title: string
 }
@@ -12,28 +13,30 @@ interface PostsProps {
 }
 const Posts = ({ posts }: PostsProps) => {
   return (
-    <div>
+    <>
       <SEO title={'Posts'} />
-      <h1>Post List</h1>
-      <ul>
-        {posts?.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
-    </div>
+      <main className={styles.container}>
+        <div className={styles.posts}>
+          <Link href={'#'}>
+            <time>25 december 2022</time>
+            <strong>Title</strong>
+            <p>Paragraph</p>
+          </Link>
+        </div>
+      </main>
+    </>
   )
 }
 
 // Static Side render, created on build efter rendering..
-export const getStaticProps: GetStaticProps<PostsProps> = async () => {
-  const response = await axios.get('http://localhost:3333/posts')
-  const posts = await response.data
-  return {
-    props: {
-      posts,
-    },
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient()
 
-    revalidate: 5, // In seconds
+  const response = await prismic.query([])
+  return {
+    props: {},
+
+    revalidate: 60 * 60 * 12, // 12 hours
   }
 }
 

@@ -69,3 +69,11 @@ PS: Any libraries upload only when the application needs, doesn´t load in the s
 https://nextjs.org/docs/advanced-features/dynamic-import
 
 using: calculo.tsx and Modal.tsx
+
+# PRISMIC
+
+https://prismic.io/dashboard
+
+Install the package in my project:
+
+> npm install @prismicio/client

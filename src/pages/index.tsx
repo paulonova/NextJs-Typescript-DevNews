@@ -1,52 +1,28 @@
-import axios from 'axios'
-import { GetServerSideProps, GetStaticProps } from 'next'
-import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import SEO from '../components/SEO'
+import homeImage from '../../public/home.svg'
+import styles from '../styles/home.module.scss'
 
-interface Post {
-  id: string
-  title: string
-}
-
-interface HomeProps {
-  posts: Post[]
-}
-
-const Home = ({ posts }: HomeProps) => {
+const Home = () => {
   return (
-    <div>
-      <SEO title={'Home'} />
-      <h1>Posts</h1>
-      <ul>
-        {posts?.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <SEO title={'Dev News!'} excludeTitleSuffix />
+      <main className={styles.content}>
+        <section className={styles.section}>
+          <span>Hello Dev!</span>
+          <h1>
+            Welcome to <br />
+            <span>Dev </span>News!
+          </h1>
+          <p>
+            A blog with extreme relevant <span>content to your learning</span>
+          </p>
+        </section>
+
+        <Image src={homeImage} alt={'Home image'} />
+      </main>
+    </>
   )
 }
 
-// Server Side Render  => Caled before useEffect!
-export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const response = await axios.get('http://localhost:3333/posts')
-  const posts = await response.data
-  return {
-    props: {
-      posts, // will be passed to the page component as props
-    },
-  }
-}
-
 export default Home
-
-// useEffect(() => {
-//   axios
-//     .get('http://localhost:3333/posts')
-//     .then((response) => {
-//       console.log('Response: ', response.data)
-//       setPosts(response.data)
-//     })
-//     .catch((error) => {
-//       console.log('Error: ', error)
-//     })
-// }, [])

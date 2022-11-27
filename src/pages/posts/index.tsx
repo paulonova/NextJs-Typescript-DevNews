@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import SEO from '../../components/SEO'
-import { getPrismicClient } from '../../services/prismicio'
+//import { getPrismicClient } from '../../services/prismicio'
 import styles from './posts.module.scss'
 
 interface Post {
@@ -29,15 +29,15 @@ const Posts = ({ posts }: PostsProps) => {
 }
 
 // Static Side render, created on build efter rendering..
-export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient()
+// export const getStaticProps: GetStaticProps = async () => {
+//   const prismic = getPrismicClient()
 
-  const response = await prismic.query([])
-  return {
-    props: {},
+//   const response = await prismic.query([])
+//   return {
+//     props: {},
 
-    revalidate: 60 * 60 * 12, // 12 hours
-  }
-}
+//     revalidate: 60 * 60 * 12, // 12 hours
+//   }
+// }
 
 export default Posts

@@ -74,6 +74,6 @@ using: calculo.tsx and Modal.tsx
 
 https://prismic.io/dashboard
 
-Install the package in my project:
+Install the package in my project to connect to Prismic:
 
 > npm install @prismicio/client

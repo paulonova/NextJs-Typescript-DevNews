@@ -1,8 +1,9 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import SEO from '../../components/SEO'
-//import { getPrismicClient } from '../../services/prismicio'
 import styles from './posts.module.scss'
+import { getPrismicClient } from '../../services/prismicio'
+import { Prismic } from '@prismicio/client'
 
 interface Post {
   id: string
@@ -28,16 +29,21 @@ const Posts = ({ posts }: PostsProps) => {
   )
 }
 
-// Static Side render, created on build efter rendering..
-// export const getStaticProps: GetStaticProps = async () => {
-//   const prismic = getPrismicClient()
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient()
 
-//   const response = await prismic.query([])
-//   return {
-//     props: {},
+  const response = await prismic.query(
+    [Prismic.predicates.at('document.type', 'post')],
+    {
+      fetch: ['post.title', 'post.content'],
+    },
+  )
 
-//     revalidate: 60 * 60 * 12, // 12 hours
-//   }
-// }
+  console.log(response)
+  return {
+    props: {},
+    revalidate: 60 * 60 * 12, // 12hs
+  }
+}
 
 export default Posts
